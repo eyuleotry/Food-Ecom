@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -8,31 +9,28 @@ export default function PaymentFailurePage() {
   const router = useRouter();
 
   useEffect(() => {
-      async function fetchToken() {
-        try {
-          const res = await fetch('/api/token');
-          if (!res.ok) throw new Error('Unauthorized');
-  
-          const { role, login } = await res.json();
-  
-          console.log('Role:', role);
-          console.log('Login:', login);
-  
-          // Redirect if not admin or not logged in
-          if (role !== 'customer' || login !== 'true') {
-            router.push('/login');
-          }
-  
-        } catch (err) {
-          console.error('Error fetching cookies:', err.message);
-          router.push('/login'); // fallback redirect on error
+    async function fetchToken() {
+      try {
+        const res = await fetch('/api/token');
+        if (!res.ok) throw new Error('Unauthorized');
+
+        const { role, login } = await res.json();
+
+        console.log('Role:', role);
+        console.log('Login:', login);
+
+        // Redirect if not admin or not logged in
+        if (role !== 'customer' || login !== 'true') {
+          router.push('/login');
         }
+      } catch (err) {
+        console.error('Error fetching cookies:', err.message);
+        router.push('/login'); // fallback redirect on error
       }
-  
-      fetchToken(); // call the async function
-  
-    }, [router]); 
-  
+    }
+
+    fetchToken();
+  }, [router]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-900 via-black to-red-950 text-white flex flex-col">
