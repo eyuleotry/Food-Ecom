@@ -24,10 +24,10 @@ export default function Footer() {
         <div className="flex flex-col md:items-end">
           <h3 className="text-orange-400 text-sm font-semibold mb-2">Follow Us</h3>
           <div className="flex gap-4 text-lg">
-            <a href="https://www.facebook.com/profile.php?id=100084456821594" className="hover:text-orange-500 transition"><FaFacebookF /></a>
-            <a href="https://www.instagram.com/programming_world360/" className="hover:text-orange-500 transition"><FaInstagram /></a>
-            <a href="https://www.youtube.com/@programming_world360" className="hover:text-orange-500 transition"><FaYoutube /></a>
-            <a href="https://www.linkedin.com/in/nadeem-mushtaq-870211345/" className="hover:text-orange-500 transition"><FaLinkedin/></a>
+            <a href="#" className="hover:text-orange-500 transition"><FaFacebookF /></a>
+            <a href="#" className="hover:text-orange-500 transition"><FaInstagram /></a>
+            <a href="https://github.com/EyasuGet" className="hover:text-orange-500 transition"><FaGithub /></a>
+            <a href="https://www.linkedin.com/in/eyasu-getaneh-35794b315/" className="hover:text-orange-500 transition"><FaLinkedin/></a>
           </div>
         </div>
       </div>

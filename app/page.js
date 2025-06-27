@@ -23,8 +23,6 @@ export default function HomePage() {
     })();
   }, [router]);
 
-
-
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
