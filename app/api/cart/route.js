@@ -102,7 +102,7 @@ export async function GET() {
           menu_item_id: item?.id,
           name: item?.name,
           price: item?.price,
-          image_url: item?.imageUrl
+          image_url: item?.image_url
         };
       });
 
